@@ -1,4 +1,4 @@
-package com.mostafayahia.petclinicwebsite.model;
+package model;
 
 public class Person {
 

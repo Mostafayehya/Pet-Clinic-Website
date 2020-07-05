@@ -1,4 +1,4 @@
-package com.mostafayahia.petclinicwebsite.model;
+package model;
 
 import java.time.LocalDate;
 
