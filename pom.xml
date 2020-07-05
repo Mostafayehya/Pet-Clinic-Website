@@ -4,7 +4,7 @@
 
     <groupId>com.mostafayahia</groupId>
     <artifactId>pet-clinic-website</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>pet-clinic-website</name>
     <description>Pet clinic clone of official pet clinic spring project</description>
 
@@ -49,7 +49,7 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/Mostafayehya/Pet-Clinic-Website.git</developerConnection>
-      <tag>pet-clinic-website-0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
 
