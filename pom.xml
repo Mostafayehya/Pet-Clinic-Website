@@ -4,7 +4,7 @@
 
     <groupId>com.mostafayahia</groupId>
     <artifactId>pet-clinic-website</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>pet-clinic-website</name>
     <description>Pet clinic clone of official pet clinic spring project</description>
 
@@ -36,7 +36,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
                 <configuration>
                     <goals>Install</goals>
                 </configuration>
@@ -46,7 +45,8 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/Mostafayehya/Pet-Clinic-Website.git</developerConnection>
-        <tag>pet-clinic-website-0.0.1</tag>
     </scm>
+
+
 
 </project>
