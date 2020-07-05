@@ -4,7 +4,7 @@
 
     <groupId>com.mostafayahia</groupId>
     <artifactId>pet-clinic-website</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>pet-clinic-website</name>
     <description>Pet clinic clone of official pet clinic spring project</description>
 
