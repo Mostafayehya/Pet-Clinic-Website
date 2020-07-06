@@ -42,16 +42,14 @@
                     <goals>
                         install
                     </goals>
-                    <checkModificationExcludes>
-                        <checkModificationExclude>pom.xml</checkModificationExclude>
-                        <checkModificationExclude>**</checkModificationExclude>
-                    </checkModificationExcludes>
 
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <!--I deleted remote tag name 0.0.2-->
     <scm>
         <developerConnection>scm:git:https://github.com/Mostafayehya/Pet-Clinic-Website.git</developerConnection>
     </scm>
