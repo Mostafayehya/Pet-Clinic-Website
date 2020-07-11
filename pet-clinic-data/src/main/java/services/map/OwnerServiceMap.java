@@ -1,33 +1,44 @@
 package services.map;
 
 import model.Owner;
+import services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner,Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
-    Set<Owner> findAll() {
+    public Set<Owner> findAll() {
         return super.findAll();
     }
 
     @Override
-    Owner findById(Long aLong) {
+    public Owner findById(Long aLong) {
         return super.findById(aLong);
     }
 
     @Override
-    void save(Long aLong, Owner object) {
+    public void save(Long aLong, Owner object) {
         super.save(aLong, object);
     }
 
     @Override
-    void deleteById(Long aLong) {
+    public void save(Owner object) {
+        super.save(object.getId(), object);
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
         super.deleteById(aLong);
     }
 
     @Override
-    void delete(Owner object) {
+    public void delete(Owner object) {
         super.delete(object);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }
