@@ -19,14 +19,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
         return super.findById(aLong);
     }
 
-    @Override
-    public void save(Long aLong, Owner object) {
-        super.save(aLong, object);
-    }
 
     @Override
     public void save(Owner object) {
-        super.save(object.getId(), object);
+        super.save( object);
     }
 
     @Override
