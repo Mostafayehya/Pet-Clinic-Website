@@ -1,5 +1,7 @@
 package petclinicwebsite.services;
 
+import petclinicwebsite.model.PetType;
+
 import java.util.Set;
 
 public interface CrudService<T, ID> {
@@ -8,5 +10,5 @@ public interface CrudService<T, ID> {
 
     T findById(ID id);
 
-    void save(T object);
+    T save(T object);
 }

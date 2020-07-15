@@ -1,5 +1,6 @@
 package petclinicwebsite.services.map;
 
+import petclinicwebsite.model.PetType;
 import petclinicwebsite.model.Vet;
 import org.springframework.stereotype.Service;
 import petclinicwebsite.services.VetService;
@@ -19,8 +20,8 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
     }
 
     @Override
-    public void save(Vet object) {
-        super.save(object);
+    public Vet save(Vet object) {
+       return  super.save(object);
     }
 
     @Override

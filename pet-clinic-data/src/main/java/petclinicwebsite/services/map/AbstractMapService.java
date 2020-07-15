@@ -17,12 +17,12 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
         return map.get(id);
     }
 
-    void save(T object) {
+    T save(T object) {
         if (object != null) {
             if (object.getId() == null) {
                 object.setId(getNextId());
             }
-            map.put(object.getId(), object);
+           return map.put(object.getId(), object);
 
         } else {
             throw new RuntimeException("Can not save a null object");
