@@ -1,6 +1,7 @@
 package petclinicwebsite.bootstrap;
 
 import petclinicwebsite.model.Owner;
+import petclinicwebsite.model.Pet;
 import petclinicwebsite.model.PetType;
 import petclinicwebsite.model.Vet;
 import org.springframework.boot.CommandLineRunner;
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Component;
 import petclinicwebsite.services.OwnerService;
 import petclinicwebsite.services.PetTypeService;
 import petclinicwebsite.services.VetService;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -31,18 +34,40 @@ public class DataLoader implements CommandLineRunner {
         PetType savedDogPetType = petTypeService.save(dog);
 
         PetType cat = new PetType();
-        dog.setName("Cat");
+        cat.setName("Cat");
         PetType savedCatPetType = petTypeService.save(cat);
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Mostafa");
         owner1.setLastName("Yahia");
+        owner1.setAddress("16 BANI MANOUR");
+        owner1.setCity("AWLAD SAKR");
+        owner1.setTelephone("00201068867847");
+
+        Pet mostafaPet = new Pet();
+        mostafaPet.setPetType(savedDogPetType);
+        mostafaPet.setName("HOWHOW");
+        mostafaPet.setBirthDate(LocalDate.now());
+
+        owner1.getPets().add(mostafaPet);
+
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("GIGI");
         owner2.setLastName("Yahia");
+        owner2.setAddress("15 MANSOURA");
+        owner2.setCity("DAKAHLIA ");
+        owner2.setTelephone("0020103442256");
+
+        Pet gigiPet = new Pet();
+        gigiPet.setPetType(savedCatPetType);
+        gigiPet.setName("MEWOMEWO");
+        gigiPet.setBirthDate(LocalDate.now());
+
+        owner1.getPets().add(gigiPet);
+
 
         ownerService.save(owner2);
 
