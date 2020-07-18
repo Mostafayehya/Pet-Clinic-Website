@@ -7,7 +7,7 @@ import petclinicwebsite.services.PetTypeService;
 import java.util.Set;
 
 @Service
-public class PetTypeMapService extends AbstractMapService<PetType,Long> implements PetTypeService {
+public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
     @Override
     public Set<PetType> findAll() {
         return super.findAll();
@@ -22,7 +22,6 @@ public class PetTypeMapService extends AbstractMapService<PetType,Long> implemen
     public PetType save(PetType object) {
         return super.save(object);
     }
-
     @Override
     void deleteById(Long aLong) {
         super.deleteById(aLong);

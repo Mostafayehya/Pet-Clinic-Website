@@ -1,9 +1,8 @@
 package petclinicwebsite.services.map;
 
-import petclinicwebsite.model.Owner;
 import org.springframework.stereotype.Service;
+import petclinicwebsite.model.Owner;
 import petclinicwebsite.model.Pet;
-import petclinicwebsite.model.PetType;
 import petclinicwebsite.services.OwnerService;
 import petclinicwebsite.services.PetService;
 import petclinicwebsite.services.PetTypeService;
@@ -39,12 +38,15 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
         if (object != null) {
             if (object.getPets() != null) {
                 object.getPets().forEach(pet -> {
-                    if (pet.getPetType() == null) { // pet type hasn't been saved to our map yet
-                        pet.setPetType(petTypeService.save(pet.getPetType()));
+                    if (pet.getPetType() != null){
+                        if(pet.getPetType().getId() == null){
+                            pet.setPetType(petTypeService.save(pet.getPetType()));
+                        }
                     } else {
-                        throw new RuntimeException("Pet Type is Required");
+                        throw new RuntimeException("Pet Type is required");
                     }
-                    if (pet.getId() ==null){
+
+                    if(pet.getId() == null){
                         Pet savedPet = petService.save(pet);
                         pet.setId(savedPet.getId());
                     }
