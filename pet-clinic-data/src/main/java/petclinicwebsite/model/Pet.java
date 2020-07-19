@@ -1,10 +1,26 @@
 package petclinicwebsite.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "pets")
 public class Pet extends BaseEntity{
 
+    @Column(name = "name")
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "typed_id")
+    private PetType petType;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private Owner owner;
+    @Column(name = "birth_date")
+    private LocalDate birthDate;
+
+
 
     public String getName() {
         return name;
@@ -13,11 +29,6 @@ public class Pet extends BaseEntity{
     public void setName(String name) {
         this.name = name;
     }
-
-    private PetType petType;
-    private Owner owner;
-    private LocalDate birthDate;
-
     public PetType getPetType() {
         return petType;
     }
