@@ -8,7 +8,6 @@ import java.util.Set;
 @Table(name = "specialties")
 public class Specialty extends BaseEntity {
 
-
     String description;
 
     @ManyToMany
