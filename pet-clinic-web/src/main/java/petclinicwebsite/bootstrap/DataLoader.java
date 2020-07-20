@@ -3,10 +3,7 @@ package petclinicwebsite.bootstrap;
 import petclinicwebsite.model.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import petclinicwebsite.services.OwnerService;
-import petclinicwebsite.services.PetTypeService;
-import petclinicwebsite.services.SpecialtyService;
-import petclinicwebsite.services.VetService;
+import petclinicwebsite.services.*;
 
 import java.time.LocalDate;
 
@@ -17,13 +14,16 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
-
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    private final VisitService visitService;
+    public DataLoader(OwnerService ownerService, VetService vetService,
+                      PetTypeService petTypeService, SpecialtyService specialtyService,
+                      VisitService visitService) {
 
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -67,6 +67,7 @@ public class DataLoader implements CommandLineRunner {
         mostafaPet.setBirthDate(LocalDate.now());
 
         owner1.getPets().add(mostafaPet);
+        mostafaPet.setOwner(owner1);
 
         ownerService.save(owner1);
 
@@ -82,10 +83,20 @@ public class DataLoader implements CommandLineRunner {
         gigiPet.setName("MEWOMEWO");
         gigiPet.setBirthDate(LocalDate.now());
 
-        owner1.getPets().add(gigiPet);
+
+        owner2.getPets().add(gigiPet);
+        gigiPet.setOwner(owner2);
 
 
         ownerService.save(owner2);
+
+        Visit visit1 = new Visit();
+        visit1.setPet(mostafaPet);
+        visit1.setDescription("Very Lazy Dog");
+        visit1.setDate(LocalDate.now());
+
+        visitService.save(visit1);
+
 
         System.out.println("Loaded Owners...");
 
