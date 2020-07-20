@@ -53,4 +53,6 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
         super.delete(object);
     }
 
+  
+
 }
