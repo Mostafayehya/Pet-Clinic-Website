@@ -1,9 +1,17 @@
 package petclinicwebsite.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "vets")
 public class Vet extends Person {
@@ -14,12 +22,4 @@ public class Vet extends Person {
     ,inverseJoinColumns = @JoinColumn(name = "specialty_id"))
     private Set<Specialty> specialtySet = new HashSet<>();
 
-
-    public Set<Specialty> getSpecialtySet() {
-        return specialtySet;
-    }
-
-    public void setSpecialtySet(Set<Specialty> specialtySet) {
-        this.specialtySet = specialtySet;
-    }
 }
