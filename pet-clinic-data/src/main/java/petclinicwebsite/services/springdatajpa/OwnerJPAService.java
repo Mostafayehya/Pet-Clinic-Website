@@ -1,5 +1,6 @@
 package petclinicwebsite.services.springdatajpa;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import petclinicwebsite.model.Owner;
@@ -11,6 +12,7 @@ import petclinicwebsite.services.OwnerService;
 import java.util.HashSet;
 import java.util.Set;
 
+@Slf4j
 @Service
 @Profile("springdatajpa")
 public class OwnerJPAService implements OwnerService {
@@ -44,19 +46,13 @@ public class OwnerJPAService implements OwnerService {
 
     @Override
     public Owner save(Owner object) {
-
-        System.out.println("#################");
-        System.out.println("#################");
-        System.out.println("#################");
-        System.out.println("#################");
-        System.out.println("#################");
-        System.out.println("#################");
-
+        log.debug("Save called from OwnerJPAService..");
         return ownerRepository.save(object);
     }
 
     @Override
     public void delete(Owner object) {
+
         ownerRepository.delete(object);
     }
 
